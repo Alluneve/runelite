@@ -33,6 +33,7 @@ import com.google.inject.testing.fieldbinder.BoundFieldModule;
 import java.awt.image.BufferedImage;
 import java.io.IOException;
 import java.util.Arrays;
+import java.util.Locale;
 import java.util.concurrent.ScheduledExecutorService;
 import javax.inject.Inject;
 import net.runelite.api.ChatMessageType;
@@ -151,6 +152,7 @@ public class ChatCommandsPluginTest
 	@Before
 	public void before()
 	{
+		Locale.setDefault(Locale.US);
 		Guice.createInjector(BoundFieldModule.of(this)).injectMembers(this);
 
 		Player player = mock(Player.class);
